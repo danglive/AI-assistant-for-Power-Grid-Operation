@@ -1,0 +1,22 @@
+# Environment for ai-dispatching project
+# Author: Dang Van Tuan
+# Email: van.tuan@lajavaness.com
+
+name: dispatching
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.9
+  - cvxpy=1.5.1
+  - einops=0.7.0
+  - tqdm=4.66.2
+  - pip
+  - pip:
+    - grid2op==1.10.3
+    - datasets==2.18.0
+    - lightsim2grid==0.7.5.post1
+    - torch==2.1.2
+    - torch-geometric==2.5.2
+    - wandb==0.17.0
+    - matplotlib==3.7.5

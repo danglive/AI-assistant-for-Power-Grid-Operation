@@ -1,0 +1,25 @@
+batch_size: 512
+save_best_model: True
+early_stop_threshold: 50
+num_epochs: 300
+learning_rate: 0.0001
+weight_decay: 1e-4  # Weight decay for the optimizer
+model_save_path: "CheckpointModel"  # Directory to save the model
+model_PowerGrid: "/home/van.tuan/DATA/EVAL_L2RPN2023/Baseline/Agent/Imitation_model/model/Overload_Case/TransformerModel/model_PowerGrid_Overload.pth"
+model_GAT: "/home/van.tuan/DATA/EVAL_L2RPN2023/Baseline/Agent/Imitation_model/model/Overload_Case/GAT/model_GAT_case_Overload.pth"
+model_GraphTransformer: "/home/van.tuan/DATA/EVAL_L2RPN2023/Baseline/Agent/Imitation_model/model/Overload_Case/GraphTransformer/model_GraphTransformer_case_Overload.pth"
+dataset_path: "dangvantuan/IEEE-118_overload/" # From HuggingFace
+use_local_data: False            # Set to True to use local CSV files then pass to path/to/train // False if dataset exist on Huggingface 
+train_data: "data/train.csv"  # Path to local train CSV in cas use_local_data is True then create path "data" and 
+valid_data: "data/validation.csv"  # Path to local validation CSV in cas use_local_data is True
+test_data: "data/test.csv"    # Path to local test CSV in cas use_local_data is True
+architecture: "GAT"     # Options: "GraphTransformer" or "GAT" or "PowerGridModel"
+dim: 256  #number dim of edge and node feature in GraphTransformer
+depth: 3 # number of layer of transformer
+num_feature_node: 8  # number of feature node
+num_feature_edge: 26 # number of feature edge
+hidden_units: 64    # dim of hidden layer in GAT model
+num_heads: 16       # number of head in GAT model 
+loss_function: "CrossEntropy"    # Options: "CrossEntropy" or "FocalLoss"
+wandb_project: "RTE-IEEE118-Overload"
+wandb_entity: "dangvantuan" 
